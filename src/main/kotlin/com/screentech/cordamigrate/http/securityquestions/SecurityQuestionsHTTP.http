@@ -1,0 +1,14 @@
+GET http://localhost:8081/api/smewallets/securityQuestions
+Content-Type: application/json
+
+###
+
+POST  http://localhost:8081/api/smewallets/securityQuestions
+Content-Type: application/json
+
+{
+"question": "what is your best friend's birthday?"
+
+}
+
+###

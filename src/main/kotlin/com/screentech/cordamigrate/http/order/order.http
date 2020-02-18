@@ -1,0 +1,38 @@
+GET http://localhost:8081/api/smewallets/orders/findAll
+
+###
+
+GET http://corda.herokuapp.com/api/smewallets/wallets/findAll
+
+###
+
+POST http://corda.herokuapp.com/api/smewallets/orders/create
+Content-Type: application/json
+
+{
+   "id" : 0,
+  "isbnNumber": "isbn-45",
+  "itemName": "test item name",
+  "itemDescription":"the item description",
+  "billingAddress": " the billing address",
+  "saleUnit": "sale unit",
+  "quantity": 2,
+  "department": "tye department ",
+  "conveyanceMethod" : "the conveyance method",
+  "deliveryTerms": "the delivery terms",
+  "paymentTerms":"the payment terms",
+  "placeOfDelivery":"place of delivery",
+
+  "qrCode":"the qr code",
+
+
+  "orderStatus" : "the order status",
+  "raiseInvoice" : "raise invoice",
+  "notificationStatus" : "the notification status",
+  "buyer": {"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
+  "supplier": {"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
+  "wallet": {"id":1,"name":"Manufacturing","timestampStr":"2020-01-30 8:59:14","user":{"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"}}
+
+}
+
+###

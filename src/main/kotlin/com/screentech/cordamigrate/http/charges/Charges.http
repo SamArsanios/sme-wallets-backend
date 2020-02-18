@@ -1,0 +1,28 @@
+GET http://localhost:8081/api/smewallets/charges/findAll
+Content-Type: application/json
+###
+
+GET http://localhost:8081/api/smewallets/charges/findById/1
+Content-Type: application/json
+###
+
+POST http://localhost:8081/api/smewallets/charges/create
+Content-Type: application/json
+
+{
+        "id" : 0,
+        "user": {"id":17,"email":"samkib@gmail.com","emailVerifiedAtStr":"2019-11-21 10:01:09","password":"pass","phoneNumber":"0756","refUserId":130,"name":"Samson Kibrom Arsanios"},
+        "wallet": {"id":1,"user":{"id":17,"email":"samkib@gmail.com","emailVerifiedAtStr":"2019-11-21 10:01:09","password":"pass","phoneNumber":"0756","refUserId":130,"name":"Samson Kibrom Arsanios"},"name":"SME Wallet","timestampStr":"2019-11-19 5:44:23"},
+        "withHoldingTax" : 10000,
+        "discountAmount" : 5000,
+        "transactionFeesSupplier" : 2000,
+        "exciseDutySupplier" : 10000,
+        "transactionFeesSponsor": 2500,
+        "exciseDutySponsor": 11000,
+        "cbr" : 1000,
+        "interestRate" : 0.05
+
+}
+
+###
+

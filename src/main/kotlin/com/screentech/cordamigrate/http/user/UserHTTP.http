@@ -1,0 +1,56 @@
+
+#find all users based on HATEOAS
+GET http://localhost:8081/api/smewallets/users
+Content-Type: application/json
+
+###
+
+# find all users based on ResponseEntity
+GET http://localhost:8081/api/smewallets/users/findAll
+Content-Type: application/json
+
+###
+
+GET http://localhost:8081/api/smewallets/users/findUserByEmail/samkib@gmail.com
+Content-Type: application/json
+
+###
+
+POST http://localhost:8081/api/smewallets/users/create
+Content-Type: application/json
+
+{
+  "email" : "samson@gmail.com",
+  "password" : "passs",
+  "phoneNumber" : "0705",
+  "refUserId" : 104,
+  "name": "Samson",
+  "userType": "buyer"
+}
+
+###
+
+
+PUT http://localhost:8081/api/smewallets/users/update
+Content-Type: application/json
+
+{
+  "id" : 17,
+  "email" : "samkib@gmail.com",
+  "password" : "pass",
+  "phoneNumber" : "0756",
+  "refUserId" : 130,
+  "name": "Samson Kibrom Arsanios"
+}
+
+###
+
+
+DELETE http://localhost:8081/api/smewallets/users/delete
+Content-Type: application/json
+
+{
+  "id" : 19
+}
+
+###

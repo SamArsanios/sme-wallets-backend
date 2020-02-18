@@ -1,0 +1,15 @@
+GET http://localhost:8081/api/smewallets/userAnswers
+Content-Type: application/json
+
+###
+
+POST http://localhost:8081/api/smewallets/userAnswers
+Content-Type: application/json
+
+{
+"userId" : 17,
+  "questionId": 1,
+  "answer": 2
+}
+
+###
