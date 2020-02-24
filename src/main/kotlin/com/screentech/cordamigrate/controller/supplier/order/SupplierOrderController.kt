@@ -52,7 +52,7 @@ class SupplierOrderController : CRUDAbstract<SupplierOrder>(){
 
         anObject.timestamp = parseStringToTimestamp(anObject.timestampStr)
         var theObject = getTheObject(anObject)
-        theObject.order.timestamp = parseStringToTimestamp(anObject.timestampStr)
+        // theObject.order.timestamp = parseStringToTimestamp(anObject.timestampStr)
 
         val result = JSONUtilsKT.ok(this.supplierOrderRepository.save(theObject))
 
