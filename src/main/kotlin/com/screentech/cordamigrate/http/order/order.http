@@ -6,7 +6,7 @@ GET http://corda.herokuapp.com/api/smewallets/wallets/findAll
 
 ###
 
-POST http://corda.herokuapp.com/api/smewallets/orders/create
+POST http://corrda.herokuapp.com/api/smewallets/orders/create
 Content-Type: application/json
 
 {
