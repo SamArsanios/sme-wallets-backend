@@ -24,9 +24,9 @@ class SupplierOrderController : CRUDAbstract<SupplierOrder>(){
 
     fun getTheObject(anObject: SupplierOrder): SupplierOrder {
 
-        anObject.order.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.order.timestampStr)
+        anObject.order.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.order.emailVerifiedAtStr)
         anObject.order.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.order.supplier?.emailVerifiedAtStr)
-        anObject.order.wallet?.timestamp = parseStringToTimestamp(anObject.order. wallet?.timestampStr)
+        anObject.order.wallet?.timestamp = parseStringToTimestamp(anObject.order.wallet?.timestampStr)
 
         return anObject
 
