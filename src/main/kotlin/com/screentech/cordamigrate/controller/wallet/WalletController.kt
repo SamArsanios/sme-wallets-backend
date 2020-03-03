@@ -32,7 +32,7 @@ class WalletController : CRUDAbstract<Wallet>() {
     }
 
     @GetMapping("/findById/{id}")
-    override fun findById(id: Long): ResponseEntity<*> {
+    override fun findById(@PathVariable id: Long): ResponseEntity<*> {
 
         val result = JSONUtilsKT.ok(this.walletRepository.findById(id))
 

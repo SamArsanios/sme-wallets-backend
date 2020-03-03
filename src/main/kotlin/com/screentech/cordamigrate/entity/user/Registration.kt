@@ -11,10 +11,8 @@ import javax.persistence.*
 @Table(name = "registrations")
 class Registration(
 
-        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column( name  = "id") var id : Long,
-        @ManyToOne(cascade = arrayOf(CascadeType.MERGE))
-        @JoinColumn(name = "user_id") var user : User,
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column( name  = "id") var id : Long,
+        @ManyToOne(cascade = arrayOf(CascadeType.MERGE)) @JoinColumn(name = "user_id") var user : User,
         @Column( name = "industry_type", columnDefinition = "text") var industryType : String?,
         @Column(name = "name", columnDefinition = "text") var name : String?,
         @Column(name = "email", columnDefinition = "text") var email : String?,

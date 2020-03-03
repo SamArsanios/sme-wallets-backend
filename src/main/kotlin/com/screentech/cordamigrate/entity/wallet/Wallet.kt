@@ -14,8 +14,8 @@ class Wallet(
         @Column(name = "id") var id : Long?,
         @Column(name = "name", columnDefinition = "text") var name : String?,
         @Column(name = "the_timestamp", columnDefinition = "timestamp default now()") var timestamp: Timestamp? = getCurrentTimestampSQL(),
-        @ManyToOne(cascade = arrayOf(CascadeType.PERSIST))
-        @JoinColumn(name = "user_id") var user : User?,
+        @ManyToOne()@JoinColumn(name = "user_id") var user : User?,
+//        cascade = arrayOf(CascadeType.PERSIST)
         @Transient var timestampStr:String? = ""
 
         ){

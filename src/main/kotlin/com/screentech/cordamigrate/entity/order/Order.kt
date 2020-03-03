@@ -10,9 +10,11 @@ import javax.persistence.*
 @Entity
 @Table(name = "orders")
 class Order(
+
+        @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "supplier_id") var supplier: User?,
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id") var id : Long,
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "buyer_id") var buyer: User?,
-        @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "supplier_id") var supplier: User?,
+
         @Column(name = "isbn_no") var isbnNumber : String?,
         @Column(name = "item_name", columnDefinition = "text") var itemName : String?,
         @Column(name = "item_description", columnDefinition = "text") var itemDescription : String?,

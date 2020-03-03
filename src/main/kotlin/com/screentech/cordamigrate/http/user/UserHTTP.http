@@ -20,11 +20,11 @@ POST http://localhost:8081/api/smewallets/users/create
 Content-Type: application/json
 
 {
-  "email" : "samson@gmail.com",
+  "email" : "jacob@gmail.com",
   "password" : "passs",
-  "phoneNumber" : "0705",
-  "refUserId" : 104,
-  "name": "Samson",
+  "phoneNumber" : "07005677789",
+  "refUserId" : 100,
+  "name": "Okia Jacob",
   "userType": "buyer"
 }
 
@@ -35,12 +35,12 @@ PUT http://localhost:8081/api/smewallets/users/update
 Content-Type: application/json
 
 {
-  "id" : 17,
+  "id" : 1,
   "email" : "samkib@gmail.com",
   "password" : "pass",
   "phoneNumber" : "0756",
   "refUserId" : 130,
-  "name": "Samson Kibrom Arsanios"
+  "name": "Samson Kibrom Arsanios",
 }
 
 ###

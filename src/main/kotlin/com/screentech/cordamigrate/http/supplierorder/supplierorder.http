@@ -1,0 +1,16 @@
+GET http://localhost:8081/api/smewallets/supplierOrders/findAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:8081/api/smewallets/supplierOrders/create
+Content-Type: application/json
+
+{
+  "id": 0,
+  "order":
+}
+
+###
+
+
