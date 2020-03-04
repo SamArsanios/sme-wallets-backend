@@ -9,13 +9,12 @@ import javax.persistence.*
 @Entity
 @Table(name = "wallets")
 class Wallet(
-
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id") var id : Long?,
         @Column(name = "name", columnDefinition = "text") var name : String?,
         @Column(name = "the_timestamp", columnDefinition = "timestamp default now()") var timestamp: Timestamp? = getCurrentTimestampSQL(),
         @ManyToOne()@JoinColumn(name = "user_id") var user : User?,
-//        cascade = arrayOf(CascadeType.PERSIST)
+//cascade = arrayOf(CascadeType.PERSIST)
         @Transient var timestampStr:String? = ""
 
         ){
