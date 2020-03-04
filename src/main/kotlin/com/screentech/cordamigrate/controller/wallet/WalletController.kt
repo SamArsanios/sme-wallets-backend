@@ -58,7 +58,7 @@ class WalletController : CRUDAbstract<Wallet>() {
 
         val result = JSONUtilsKT.ok(this.walletRepository.saveAndFlush(anObject))
 
-        this.notificationMessage.convertAndSend("/topic/wallets/update", result)
+        this.notificationMessage.convertAndSend("/topic/wallet/update", result)
 
         return result
 

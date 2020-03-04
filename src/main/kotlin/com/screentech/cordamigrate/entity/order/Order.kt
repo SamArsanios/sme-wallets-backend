@@ -30,11 +30,11 @@ class Order(
         @Column(name = "order_due_date",columnDefinition = "varchar(255)") var orderDueDate : String?,
         @Column(name = "time_period") var time_period : String?,
         @Column(name = "qr_code", columnDefinition = "text") var qrCode : String?,
-        @OneToOne @JoinColumn(name = "wallet_id") var wallet: Wallet?,
+        @OneToOne @JoinColumn(name = "wallets_id") var wallet: Wallet?,
         @Column(name = "order_status",columnDefinition = "text") var orderStatus : String?,
         @Column(name = "raise_invoice",columnDefinition = "text") var raiseInvoice : String?,
         @Column(name = "notification_status",columnDefinition = "text") var notificationStatus : String?,
         @Column(name = "the_timestamp", columnDefinition = "varchar(255)") var timestamp: Timestamp? = getCurrentTimestampSQL(),
-        @Column(name = "industry_type") var industryType: String?,
+        @Column(name = "industry_type", columnDefinition = "varchar(255)") var industryType: String?,
         @Transient var timestampStr : String?
         )

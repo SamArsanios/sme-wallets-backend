@@ -20,18 +20,20 @@ Content-Type: application/json
 
 {
   "name" : "SME",
-"user": {
-  "id":3,
-  "email":"jacob@gmail.com",
-  "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
-  "password":"passs",
+  "user": {
+    "id":3,
+     "email":"comboni@gmail.com",
+     "emailVerifiedAtStr":"2020-03-04 18:00:38.563492",
+     "password":"yellow",
   "phoneNumber":"07005677789",
-  "refUserId":100,
-  "name":"Okia Jacob",
+  "refUserId": 710,
+  "name":"Comboni Daniel",
   "userType":"buyer"
 }
 
 }
 
 ###
+
+
 

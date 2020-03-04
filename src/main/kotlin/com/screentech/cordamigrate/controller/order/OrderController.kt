@@ -26,7 +26,7 @@ class OrderController : CRUDAbstract<Order>(){
     override fun create(@RequestBody anObject: Order): ResponseEntity<*> {
 
         anObject.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.buyer?.emailVerifiedAtStr)
-//        anObject.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.supplier?.emailVerifiedAtStr)
+        anObject.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.supplier?.emailVerifiedAtStr)
         anObject.timestamp = getCurrentTimestampSQL()
 
         val result = JSONUtilsKT.ok(this.orderRepository.save(anObject))

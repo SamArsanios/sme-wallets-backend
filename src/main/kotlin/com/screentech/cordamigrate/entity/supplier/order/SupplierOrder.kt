@@ -11,10 +11,9 @@ import javax.persistence.*
 @Entity
 @Table(name = "supplier_order")
 class SupplierOrder(
-        
-         @OneToOne(cascade = arrayOf(CascadeType.PERSIST)) @JoinColumn(name = "order_id") var order: Order,
+
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long,
-        
+        @OneToOne (cascade = arrayOf(CascadeType.PERSIST)) @JoinColumn(name = "order_id") var order: Order,
         @Column(name = "price_per_item", columnDefinition = "decimal(15,8)") var pricePerItem: BigDecimal,
         @Column(name = "total_price", columnDefinition = "decimal(15,8)") var totalPrice: BigDecimal,
         @Column(name = "tax_rate", columnDefinition = "decimal(15,8)") var taxRate: BigDecimal,

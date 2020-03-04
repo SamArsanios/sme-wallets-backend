@@ -11,19 +11,8 @@ Content-Type: application/json
 
 
 {
-  "supplier":
-  {
-    "id":2,
-    "name":"Deb",
-    "email":"deb@gmail.com",
-    "refUserId":105,
-    "emailVerifiedAtStr":"2020-02-26 08:27:31.116151",
-    "password":"passs",
-    "phoneNumber":"0700",
-    "userType":"supplier"
-  },
   "buyer":{
-    "id":3,
+    "id":1,
     "name":"Okia Jacob",
     "email":"jacob@gmail.com",
     "refUserId":100,
@@ -45,15 +34,15 @@ Content-Type: application/json
   "placeOfDelivery":"place of delivery",
   "deliveryTime":"2020-01-29 13:37:05",
   "orderDueDate": "2020-01-29 13:37:05",
-  "timePeriod": "30 days",
+  "time_period": "30 days",
   "qrCode":"the qr code",
   "wallet": {
-    "id":3,
+    "id":1,
     "name":"SME",
     "timestampStr":"2020-03-03 10:30:45.603888",
     "user":
     {
-      "id":3,
+      "id":1,
       "name":"Okia Jacob",
       "email":"jacob@gmail.com",
       "refUserId":100,
@@ -67,7 +56,19 @@ Content-Type: application/json
   "notificationStatus" : "the notification status",
   "timestamp": null,
   "industryType": "Manufacturing"
-}
+},
+  "supplier":
+  {
+    "id":2,
+    "name":"Deb",
+    "email":"deb@gmail.com",
+    "refUserId":105,
+    "emailVerifiedAtStr":"2020-02-26 08:27:31.116151",
+    "password":"passs",
+    "phoneNumber":"0700",
+    "userType":"supplier"
+  }
+
 }
 
 ###
