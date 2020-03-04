@@ -8,7 +8,7 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:8081/api/smewallets/wallets/findById/2
+GET http://localhost:8081/api/smewallets/wallets/findById/1
 Content-Type: application/json
 
 ###
@@ -19,11 +19,21 @@ POST http://localhost:8081/api/smewallets/wallets/create
 Content-Type: application/json
 
 {
-  "id" : 0,
-"user": {"id":2,"email":"samson@gmail.com","emailVerifiedAtStr":"2020-01-13 11:15:18","password":"passs","phoneNumber":"0705","refUserId":104,"name":"Samson","userType":"buyer"},
-  "name" : "Bank Wallet"
+  "name" : "SME",
+  "user": {
+    "id":3,
+     "email":"comboni@gmail.com",
+     "emailVerifiedAtStr":"2020-03-04 18:00:38.563492",
+     "password":"yellow",
+  "phoneNumber":"07005677789",
+  "refUserId": 710,
+  "name":"Comboni Daniel",
+  "userType":"buyer"
+}
 
 }
 
 ###
+
+
 
