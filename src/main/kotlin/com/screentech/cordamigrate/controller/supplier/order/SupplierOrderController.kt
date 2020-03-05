@@ -45,9 +45,13 @@ class SupplierOrderController : CRUDAbstract<SupplierOrder>(){
 
         val result =  JSONUtilsKT.ok(this.supplierOrderRepository.save(theObject))
 
+        println("the result: " + theObject.toString() )
+
         this.notificationMessage.convertAndSend("/topic/supplierOrders/create", result)
 
-        return result
+
+
+        return JSONUtilsKT.ok(theObject)
 
     }
 
