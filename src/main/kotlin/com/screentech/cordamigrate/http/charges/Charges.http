@@ -10,9 +10,33 @@ POST http://localhost:8081/api/smewallets/charges/create
 Content-Type: application/json
 
 {
-        "id" : 0,
-        "user": {"id":17,"email":"samkib@gmail.com","emailVerifiedAtStr":"2019-11-21 10:01:09","password":"pass","phoneNumber":"0756","refUserId":130,"name":"Samson Kibrom Arsanios"},
-        "wallet": {"id":1,"user":{"id":17,"email":"samkib@gmail.com","emailVerifiedAtStr":"2019-11-21 10:01:09","password":"pass","phoneNumber":"0756","refUserId":130,"name":"Samson Kibrom Arsanios"},"name":"SME Wallet","timestampStr":"2019-11-19 5:44:23"},
+        "user":
+        {
+          "id":1,
+          "email":"jacob@gmail.com",
+          "emailVerifiedAtStr":"2019-11-21 10:01:09",
+          "name":"Samson Kibrom Arsanios",
+          "password":"passs",
+          "phoneNumber":"0756",
+          "refUserId":130,
+          "userType": "buyer"
+        },
+        "wallet":
+        {
+          "id":1,
+          "user":{
+            "id":1,
+            "email":"samkib@gmail.com",
+            "emailVerifiedAtStr":"2019-11-21 10:01:09",
+            "name":"Samson Kibrom Arsanios",
+            "password":"pass",
+            "phoneNumber":"0756",
+            "refUserId":130,
+            "userType": "buyer"
+          },
+          "name":"SME",
+          "timestampStr":"2019-11-19 5:44:23"
+        },
         "withHoldingTax" : 10000,
         "discountAmount" : 5000,
         "transactionFeesSupplier" : 2000,
@@ -21,7 +45,6 @@ Content-Type: application/json
         "exciseDutySponsor": 11000,
         "cbr" : 1000,
         "interestRate" : 0.05
-
 }
 
 ###
