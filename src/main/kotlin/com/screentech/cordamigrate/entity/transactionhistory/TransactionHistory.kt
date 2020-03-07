@@ -8,6 +8,8 @@ import java.math.BigDecimal
 import java.sql.Timestamp
 import javax.persistence.*
 
+@Entity
+@Table(name = "transaction_history")
 class TransactionHistory(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id") var id : Long,
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "invoice_id") var invoice: Invoice?,

@@ -1,4 +1,9 @@
 package com.screentech.cordamigrate.entity.roles
 
-class ModelHasRoles {
-}
+import javax.persistence.*
+
+@Entity
+@Table(name = "model_has_roles")
+class ModelHasRoles (
+
+)

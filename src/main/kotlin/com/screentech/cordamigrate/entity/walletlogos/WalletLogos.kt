@@ -5,6 +5,8 @@ import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
 import java.sql.Timestamp
 import javax.persistence.*
 
+@Entity
+@Table(name = "wallet_logos")
 class WalletLogos (
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id") var id : Long,
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "user_id") var buyer: User?,

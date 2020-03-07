@@ -7,6 +7,8 @@ import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
 import java.sql.Timestamp
 import javax.persistence.*
 
+@Entity
+@Table(name = "order_notifications")
 class OrderNotifications (
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id") var id : Long,
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "buyer_id") var buyer: User?,
