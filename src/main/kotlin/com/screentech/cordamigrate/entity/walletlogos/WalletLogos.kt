@@ -1,7 +1,6 @@
 package com.screentech.cordamigrate.entity.walletlogos
 
 import com.screentech.cordamigrate.entity.user.User
-import com.screentech.cordamigrate.entity.wallet.Wallet
 import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
 import java.sql.Timestamp
 import javax.persistence.*
