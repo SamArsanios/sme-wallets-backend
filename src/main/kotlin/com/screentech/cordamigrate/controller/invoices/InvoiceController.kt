@@ -7,7 +7,7 @@
  *
  */
 
-package com.screentech.cordamigrate.controller
+package com.screentech.cordamigrate.controller.invoices
 
 import com.screentech.cordamigrate.dao.invoices.InvoiceRepository
 import com.screentech.cordamigrate.entity.invoices.Invoice
