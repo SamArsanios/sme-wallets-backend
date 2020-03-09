@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Service
 
 @Service
-interface WalletLogos: JpaRepository<Wallet, Long> {
+interface WalletLogosRepository: JpaRepository<Wallet, Long> {
 }
 

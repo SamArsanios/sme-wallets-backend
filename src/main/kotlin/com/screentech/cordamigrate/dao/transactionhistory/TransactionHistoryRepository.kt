@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Service
 
 @Service
-interface TransactionHistory: JpaRepository<TransactionHistory, Long> {
+interface TransactionHistoryRepository: JpaRepository<TransactionHistory, Long> {
 }
 
 
