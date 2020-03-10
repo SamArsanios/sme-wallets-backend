@@ -50,5 +50,5 @@ class SecurityQuestionsController: CRUDAbstract<SecurityQuestion>() {
     override fun findById(@PathVariable id: Long): ResponseEntity<*> {
         return JSONUtilsKT.ok(this.securityQuestionsRepository.findById(id))
     }
-
 }
+

@@ -15,18 +15,31 @@ class RolesController:CRUDAbstract<Roles>() {
     @Autowired
     lateinit var rolesRepository: RolesRepository
 
-    @PostMapping("create")
+    @PostMapping("/create")
     override fun create(@RequestBody anObject: Roles): ResponseEntity<*> {
         anObject.timestamp = getCurrentTimestampSQL()
         val result = JSONUtilsKT.ok(this.rolesRepository.save(anObject))
         return result
     }
 
-    @PutMapping("update")
+    @PutMapping("/update")
     fun UpdateRoles(@RequestBody roles:Roles):ResponseEntity<*>{
         roles.timestamp = parseStringToTimestamp(roles.timestampStr)
         val result = JSONUtilsKT.ok(this.rolesRepository.save(roles))
         return result
     }
 
+    @DeleteMapping()
+
+    @GetMapping("/findAll")
+    override fun findAll() : ResponseEntity<*> {
+//Inline Variable
+        return JSONUtilsKT.ok(rolesRepository.findAll())
+    }
+
+    @GetMapping("/findById/{id}")
+    override fun findById(@PathVariable id: Long): ResponseEntity<*> {
+
+        return JSONUtilsKT.ok(this.rolesRepository.findById(id))
+    }
 }
