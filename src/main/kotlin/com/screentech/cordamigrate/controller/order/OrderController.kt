@@ -41,7 +41,7 @@ class OrderController : CRUDAbstract<Order>(){
 
         anObject.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.buyer?.emailVerifiedAtStr)
         anObject.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.supplier?.emailVerifiedAtStr)
-        anObject.timestamp = parseStringToTimestamp(anObject.timestampStr)
+//        anObject.timestamp = parseStringToTimestamp(anObject.timestampStr)
 
         val result = JSONUtilsKT.ok(this.orderRepository.save(anObject))
 
