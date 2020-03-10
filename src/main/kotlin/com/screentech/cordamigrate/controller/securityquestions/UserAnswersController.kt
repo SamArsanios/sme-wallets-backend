@@ -1,9 +1,7 @@
 package com.screentech.cordamigrate.controller.securityquestions
 
 import com.screentech.cordamigrate.dao.securityquestion.UserAnswerRepository
-import com.screentech.cordamigrate.dao.user.UserRepository
 import com.screentech.cordamigrate.entity.securityquestion.UserAnswer
-import com.screentech.cordamigrate.entity.user.User
 import com.screentech.cordamigrate.utility.CRUDAbstract
 import com.screentech.cordamigrate.utility.JSONUtilsKT
 import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
@@ -32,7 +30,7 @@ class UserAnswersController: CRUDAbstract<UserAnswer>() {
         return result
     }
 
-    @PutMapping()
+    @PutMapping("/update")
     fun UpdateUserAnswer(@RequestBody userAnswer: UserAnswer) : ResponseEntity<*>{
         userAnswer.timestamp = parseStringToTimestamp(userAnswer.timestampStr)
 
@@ -55,11 +53,9 @@ class UserAnswersController: CRUDAbstract<UserAnswer>() {
     @GetMapping("/findAll")
     override fun findAll() : ResponseEntity<*> {
 
-        val result = JSONUtilsKT.ok(this.userAnswersRepository.findAll())
-
-//        this.notificationMessage.convertAndSend("/topic/users/findAll", result)
-
-        return result
+        //        this.notificationMessage.convertAndSend("/topic/users/findAll", result)
+//Inline Variable
+        return JSONUtilsKT.ok(userAnswersRepository.findAll())
     }
 
     @GetMapping("/findById/{id}")
