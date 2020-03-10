@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Service
 
 @Service
-interface OrderNotifications: JpaRepository<OrderNotifications, Long> {
+interface OrderNotificationsRepository: JpaRepository<OrderNotifications, Long> {
 }
