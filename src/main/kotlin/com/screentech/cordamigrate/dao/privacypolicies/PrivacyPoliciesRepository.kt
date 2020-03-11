@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Service
 
 @Service
-interface PrivacyPolicyRepository : JpaRepository<PrivacyPolicies , Long> {
+interface PrivacyPoliciesRepository : JpaRepository<PrivacyPolicies , Long> {
 
 }

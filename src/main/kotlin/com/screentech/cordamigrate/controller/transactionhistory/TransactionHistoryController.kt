@@ -44,7 +44,4 @@ class TransactionHistoryController:CRUDAbstract<TransactionHistory>() {
         return JSONUtilsKT.ok(transactionHistoryRepository.findById(id))
     }
 
-
-
-
 }
