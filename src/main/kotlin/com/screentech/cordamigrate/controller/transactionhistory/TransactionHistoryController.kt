@@ -43,5 +43,4 @@ class TransactionHistoryController:CRUDAbstract<TransactionHistory>() {
     override fun deleteById(id: Long): ResponseEntity<*> {
         return JSONUtilsKT.ok(transactionHistoryRepository.findById(id))
     }
-
 }
