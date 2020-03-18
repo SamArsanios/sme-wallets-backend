@@ -1,7 +1,18 @@
-# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
-# paste cURL into the file and request will be converted to HTTP Request format.
-#
-# Following HTTP Request Live Templates are available:
-# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
-# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
-# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+GET http://localhost:8081/api/smewallets/roles/findAll
+###
+
+GET http://corda.herokuapp.com/api/smewallets/roles/findAll
+###
+
+POST http://localhost:8081/api/smewallets/roles/update
+###
+
+POST http://localhost:8081/api/smewallets/roles/create
+Content-Type: application/json
+
+{
+  "name": "sami",
+  "guardName": "kib"
+}
+
+###
