@@ -25,6 +25,10 @@ fun getCurrentTimestampSQL() : Timestamp  = Timestamp.from(Instant.now())
 
 fun parseStringToTimestamp(timestampStr : String?) : Timestamp = Timestamp.valueOf(timestampStr)
 
+fun timestampStr() : String = "2020-03-03 10:01:49"
+
+fun emailVerifiedAtStr() : String = timestampStr()
+
 
 //fun main() {
 //
