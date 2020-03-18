@@ -1,7 +1,41 @@
-# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
-# paste cURL into the file and request will be converted to HTTP Request format.
-#
-# Following HTTP Request Live Templates are available:
-# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
-# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
-# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+GET http://localhost:8081/api/smewallets/walletusers/findAll
+###
+
+GET http://corda.herokuapp.com/api/smewallets/walletusers/findAll
+###
+
+POST http://localhost:8081/api/smewallets/walletusers/update
+###
+
+POST http://localhost:8081/api/smewallets/walletusers/create
+Content-Type: application/json
+
+{
+  "buyer":{
+    "id":1,
+    "name":"Okia Jacob",
+    "email":"jacob@gmail.com",
+    "refUserId":100,
+    "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+    "password":"passs",
+    "phoneNumber":"07005677789",
+    "userType":"buyer"
+  },
+  "wallet": {
+    "id":1,
+    "name":"SME",
+    "timestampStr":"2020-03-03 10:30:45.603888",
+    "user":
+    {
+      "id":1,
+      "name":"Okia Jacob",
+      "email":"jacob@gmail.com",
+      "refUserId":100,
+      "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+      "password":"passs",
+      "phoneNumber":"07005677789",
+      "userType":"buyer"
+    }
+  }
+}
+###
