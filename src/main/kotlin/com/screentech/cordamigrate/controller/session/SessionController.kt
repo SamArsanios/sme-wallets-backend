@@ -17,7 +17,7 @@ class SessionController :  CRUDAbstract<Session>() {
     @Autowired
     lateinit var sessionRepository: SessionRepository
 
-    @GetMapping("/update")
+    @GetMapping("/create")
     override fun create(@RequestBody anObject: Session): ResponseEntity<*> {
         anObject.timestamp = getCurrentTimestampSQL()
         return JSONUtilsKT.ok(this.sessionRepository.save(anObject))
@@ -29,6 +29,8 @@ class SessionController :  CRUDAbstract<Session>() {
         anObject.user.emailVerifiedAt = parseStringToTimestamp(anObject.user.emailVerifiedAtStr)
         return JSONUtilsKT.ok(this.sessionRepository.save(anObject))
     }
+
+    @DeleteMapping("/delete")
 
     @GetMapping("/findAll")
     override fun findAll(): ResponseEntity<*> {
