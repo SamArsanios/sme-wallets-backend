@@ -9,7 +9,7 @@ import javax.persistence.*
 @Table(name = "privacy_policies")
 class PrivacyPolicies (
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id") var id : Long,
-        @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "user_id") var user: User?,
+        @ManyToOne @JoinColumn(name = "user_id") var user: User?,
         @Column(name = "privacy_policy", columnDefinition = "text") var privacyPolicy: String?,
         @Column(name = "terms_conditions", columnDefinition = "text") var termsConditions: String?,
         @Column(name = "notice_of_assignment", columnDefinition = "text") var noticeOfAssignment: String?,

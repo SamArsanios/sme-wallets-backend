@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping(("/api/smewallets/privacypolicies"))
+@RequestMapping("api/smewallets/privacypolicies")
 class PrivacyPoliciesController: CRUDAbstract<PrivacyPolicies>(){
     @Autowired
     lateinit var privacyPoliciesRepository: PrivacyPoliciesRepository

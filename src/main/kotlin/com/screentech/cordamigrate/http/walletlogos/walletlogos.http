@@ -1,0 +1,23 @@
+GET http://localhost:8081/api/smewallets/walletlogos/findAll
+###
+
+GET http://corda.herokuapp.com/api/smewallets/walletlogos/findAll
+###
+
+POST http://localhost:8081/api/smewallets/walletlogos/create
+Content-Type: application/json
+
+{
+  "buyer":{
+    "id":1,
+    "name":"Okia Jacob",
+    "email":"jacob@gmail.com",
+    "refUserId":100,
+    "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+    "password":"passs",
+    "phoneNumber":"07005677789",
+    "userType":"buyer"
+  },
+  "logo": "Mob G Logo"
+}
+###
