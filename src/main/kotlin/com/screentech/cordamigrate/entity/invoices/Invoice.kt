@@ -15,7 +15,7 @@ class Invoice (
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long,
         @OneToOne @JoinColumn(name = "order_id") var order : Order,
         @OneToOne @JoinColumn(name = "sponsor_id") var sponsor: User,
-        @OneToOne @JoinColumn(name = "wallet_id") var wallet: Wallet,
+//        @OneToOne @JoinColumn(name = "wallet_id") var wallet: Wallet,
         @Column(name = "invoice_date", columnDefinition = "timestamp default now()") var invoiceDate: Timestamp = getCurrentTimestampSQL(),
         @Column(name = "invoice_due_date", columnDefinition = "timestamp") var invoiceDueDate: Timestamp?,
         @Column(name = "invoice_status") var invoiceStatus: String,
