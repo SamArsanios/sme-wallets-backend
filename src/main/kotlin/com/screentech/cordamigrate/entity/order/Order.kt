@@ -34,7 +34,7 @@ class Order(
         @Column(name = "order_status",columnDefinition = "text") var orderStatus : String?,
         @Column(name = "raise_invoice",columnDefinition = "text") var raiseInvoice : String?,
         @Column(name = "notification_status",columnDefinition = "text") var notificationStatus : String?,
-        @Column(name = "the_timestamp", columnDefinition = "varchar(255)") var timestamp: Timestamp? = getCurrentTimestampSQL(),
+        @Column(name = "the_timestamp", columnDefinition = "timestamp") var timestamp: Timestamp? = getCurrentTimestampSQL(),
         @Column(name = "industry_type", columnDefinition = "varchar(255)") var industryType: String?,
         @Transient var timestampStr : String?
         )

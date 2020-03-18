@@ -2,7 +2,6 @@ package com.screentech.cordamigrate.entity.privacypolicies
 
 import com.screentech.cordamigrate.entity.user.User
 import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
-import jdk.nashorn.internal.ir.Assignment
 import java.sql.Timestamp
 import javax.persistence.*
 
