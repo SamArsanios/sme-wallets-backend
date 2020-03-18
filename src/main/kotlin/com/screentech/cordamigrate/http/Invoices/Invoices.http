@@ -6,53 +6,106 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 
-GET http://localhost:8081/api/smewallets/charges/findAll
+GET http://localhost:8081/api/smewallets/invoices/findAll
 Content-Type: application/json
 ###
 
-GET http://localhost:8081/api/smewallets/charges/findById/1
+GET http://localhost:8081/api/smewallets/invoices/findById/1
 Content-Type: application/json
 ###
 
-POST http://localhost:8081/api/smewallets/charges/create
+POST http://localhost:8081/api/smewallets/invoices/create
 Content-Type: application/json
 
 {
-  "user":
-  {
-    "id":1,
-    "email":"jacob@gmail.com",
-    "emailVerifiedAtStr":"2019-11-21 10:01:09",
-    "name":"Samson Kibrom Arsanios",
-    "password":"passs",
-    "phoneNumber":"0756",
-    "refUserId":130,
-    "userType": "buyer"
-  },
-  "wallet":
-  {
-    "id":1,
-    "user":{
-      "id":1,
-      "email":"samkib@gmail.com",
-      "emailVerifiedAtStr":"2019-11-21 10:01:09",
-      "name":"Samson Kibrom Arsanios",
-      "password":"pass",
-      "phoneNumber":"0756",
-      "refUserId":130,
-      "userType": "buyer"
-    },
-    "name":"SME",
-    "timestampStr":"2019-11-19 5:44:23"
-  },
-  "withHoldingTax" : 10000,
-  "discountAmount" : 5000,
-  "transactionFeesSupplier" : 2000,
-  "exciseDutySupplier" : 10000,
-  "transactionFeesSponsor": 2500,
-  "exciseDutySponsor": 11000,
-  "cbr" : 1000,
-  "interestRate" : 0.05
+  "order": {
+    "id": "1",
+    "isbnNumber": "isbn-45",
+    "itemName": "test item name",
+    "itemDescription": "the item description",
+    "billingAddress": " the billing address",
+    "saleUnit": "sale unit",
+    "quantity": 2,
+    "department": "tye department ",
+    "conveyanceMethod": "the conveyance method",
+    "deliveryTerms": "the delivery terms",
+    "paymentTerms": "the payment terms",
+    "placeOfDelivery": "place of delivery",
+    "deliveryTime": "2020-01-29 13:37:05",
+    "orderDueDate": "2020-01-29 13:37:05",
+    "time_period": "30 days",
+    "qrCode": "the qr code",
+    "orderStatus": "the order status",
+    "raiseInvoice": "raise invoice",
+    "notificationStatus": "the notification status",
+    "timestampStr": "2020-03-18 10:37:23.161940",
+    "industryType": "Manufacturing",
+
+    "buyer": {
+              "id": 1,
+              "name": "Okia Jacob",
+              "email": "jacob@gmail.com",
+              "refUserId": 100,
+              "emailVerifiedAtStr": "2020-03-03 10:01:49.192690",
+              "password": "passs",
+              "phoneNumber": "07005677789",
+              "userType": "buyer"
+             },
+
+    "supplier": {
+                 "id": 2,
+                 "name": "Deb",
+                 "email": "deb@gmail.com",
+                 "refUserId": 105,
+                 "emailVerifiedAtStr": "2020-02-26 08:27:31.116151",
+                 "password": "passs",
+                 "phoneNumber": "0700",
+                 "userType": "supplier"
+               },
+
+    "wallet": {
+      "id": 1,
+      "name": "SME",
+      "timestampStr": "2020-03-03 10:30:45.603888",
+      "user": {
+               "id": 1,
+               "name": "Okia Jacob",
+               "email": "jacob@gmail.com",
+               "refUserId": 100,
+               "emailVerifiedAtStr": "2020-03-03 10:01:49.192690",
+               "password": "passs",
+               "phoneNumber": "07005677789",
+               "userType": "buyer"
+              }
+             }
+   },
+
+  "sponsor": {
+              "id": 3,
+              "email": "tintino@gmail.com",
+              "emailVerifiedAtStr": "2019-11-21 10:01:09",
+              "password": "jothi",
+              "phoneNumber": "0781123456",
+              "refUserId": 102,
+              "name": "Tin Tin",
+              "userType": "sponsor"
+            },
+
+  "invoiceDueDateStr": "2020-1-19 7:44:23",
+  "invoiceStatus": "Pending",
+  "transactionFeePercentage": 5,
+  "transactionFees": 10,
+  "interestRate": 3,
+  "amountToPay": 15,
+  "withHoldingAmount": 33,
+  "withHoldingTaxPercentage": 10,
+  "notificationStatus": "Approved",
+  "buyerNotificationStatus": "Accepted",
+  "declineReason": "Insufficient Funds",
+  "getPaid": 1,
+  "authorizeStatus": 1,
+  "sponsorStatus": 1,
+  "theTimestampStr": "2019-12-30 5:44:23"
 }
 
 ###
