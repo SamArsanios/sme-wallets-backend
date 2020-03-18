@@ -31,6 +31,10 @@ class SessionController :  CRUDAbstract<Session>() {
     }
 
     @DeleteMapping("/delete")
+    fun deleteASession(@RequestBody session: Session) : ResponseEntity<*> {
+
+        return JSONUtilsKT.ok(sessionRepository.delete(session))
+    }
 
     @GetMapping("/findAll")
     override fun findAll(): ResponseEntity<*> {
