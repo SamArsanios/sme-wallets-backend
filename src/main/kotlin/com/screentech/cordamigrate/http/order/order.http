@@ -50,13 +50,9 @@ Content-Type: application/json
       "password":"passs",
       "phoneNumber":"07005677789",
       "userType":"buyer"
-    },
-  "orderStatus" : "the order status",
-  "raiseInvoice" : "raise invoice",
-  "notificationStatus" : "the notification status",
-  "timestamp": null,
-  "industryType": "Manufacturing"
+    }
 },
+
   "supplier":
   {
     "id":2,
@@ -67,8 +63,13 @@ Content-Type: application/json
     "password":"passs",
     "phoneNumber":"0700",
     "userType":"supplier"
-  }
+  },
 
+  "orderStatus" : "the order status",
+  "raiseInvoice" : "raise invoice",
+  "notificationStatus" : "the notification status",
+  "timestamp": null,
+  "industryType": "Manufacturing"
 }
 
 ###

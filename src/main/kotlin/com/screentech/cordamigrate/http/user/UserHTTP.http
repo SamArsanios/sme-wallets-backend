@@ -20,12 +20,12 @@ POST http://localhost:8081/api/smewallets/users/create
 Content-Type: application/json
 
 {
-  "email" : "comboni@gmail.com",
-  "password" : "pass",
-  "phoneNumber" : "0785450102",
-  "refUserId" : 710,
-  "name": "Okello Comboni",
-  "userType": "buyer"
+  "email" : "samson@gmail.com",
+  "password" : "dadsf",
+  "phoneNumber" : "0781145478",
+  "refUserId" : 102,
+  "name": "Little Wolf",
+  "userType": "sponsor"
 }
 
 ###

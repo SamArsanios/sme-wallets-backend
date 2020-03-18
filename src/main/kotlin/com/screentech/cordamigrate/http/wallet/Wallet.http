@@ -25,10 +25,10 @@ Content-Type: application/json
      "email":"comboni@gmail.com",
      "emailVerifiedAtStr":"2020-03-04 18:00:38.563492",
      "password":"yellow",
-  "phoneNumber":"07005677789",
-  "refUserId": 710,
-  "name":"Comboni Daniel",
-  "userType":"buyer"
+     "phoneNumber":"07005677789",
+     "refUserId": 100,
+     "name":"Comboni Daniel",
+     "userType":"buyer"
 }
 
 }
