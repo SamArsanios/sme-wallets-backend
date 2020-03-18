@@ -11,7 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@RestController("/api/smewallets/ordernotifications")
+@RestController
+@RequestMapping("/api/smewallets/ordernotifications")
 class OrderNotificationsController: CRUDAbstract<OrderNotifications>() {
     @Autowired
     lateinit var orderNotificationsRepository: OrderNotificationsRepository

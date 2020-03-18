@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@RestController("api/smewallets/walletlogos")
+@RestController
+@RequestMapping("api/smewallets/walletlogos")
 class WalletLogosController:CRUDAbstract<WalletLogos>(){
     @Autowired
     lateinit var walletLogosRepository: WalletLogosRepository

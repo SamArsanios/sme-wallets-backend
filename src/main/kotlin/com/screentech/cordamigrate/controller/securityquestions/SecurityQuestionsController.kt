@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@RestController("api/smewallets/securityquestions")
-@RequestMapping
+@RestController
+@RequestMapping("api/smewallets/securityquestions")
 class SecurityQuestionsController: CRUDAbstract<SecurityQuestion>() {
 
     @Autowired

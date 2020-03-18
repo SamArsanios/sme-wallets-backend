@@ -11,7 +11,8 @@ import org.springframework.http.ResponseEntity
 import org.springframework.messaging.simp.SimpMessagingTemplate
 import org.springframework.web.bind.annotation.*
 
-@RestController("/api/smewallets/useranswers")
+@RestController
+@RequestMapping("/api/smewallets/useranswers")
 class UserAnswersController: CRUDAbstract<UserAnswer>() {
     @Autowired
     lateinit var userAnswersRepository: UserAnswerRepository
