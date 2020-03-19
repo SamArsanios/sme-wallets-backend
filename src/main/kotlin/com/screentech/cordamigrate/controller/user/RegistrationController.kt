@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.math.BigDecimal
 
 @RestController
-@RequestMapping("/api/smewallets/registrations")
+@RequestMapping("api/smewallets/registrations")
 class RegistrationController : CRUDAbstract<Registration>(){
 
     @Autowired
