@@ -36,10 +36,10 @@ class InvoiceController : CRUDAbstract<Invoice>() {
     private fun parseTimestamps(anObject: Invoice) : Invoice {
         anObject.theTimestamp = parseStringToTimestamp(anObject.theTimestampStr) // parse theTimestamp
         anObject.invoiceDueDate = parseStringToTimestamp(anObject.invoiceDueDateStr) // parse the Invoice Due Date
-        anObject.sponsor.emailVerifiedAt = parseStringToTimestamp(anObject.sponsor.emailVerifiedAtStr) // parse sponsor (User.kt) timestamp
+        anObject.sponsor?.emailVerifiedAt = parseStringToTimestamp(anObject.sponsor?.emailVerifiedAtStr) // parse sponsor (User.kt) timestamp
 //        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
 //        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
-        anObject.order.timestamp = parseStringToTimestamp(anObject.order.timestampStr) // parse order timestamp
+        anObject.order?.timestamp = parseStringToTimestamp(anObject.order?.timestampStr) // parse order timestamp
         return anObject // return anObject (Invoice)
     }
 
@@ -47,10 +47,10 @@ class InvoiceController : CRUDAbstract<Invoice>() {
     private fun parseTimestampPluggedIn(anObject: Invoice) : Invoice {
         anObject.theTimestamp = parseStringToTimestamp(timestampStr()) // parse theTimestamp
         anObject.invoiceDueDate = parseStringToTimestamp(anObject.invoiceDueDateStr) // parse the Invoice Due Date
-        anObject.sponsor.emailVerifiedAt = parseStringToTimestamp(emailVerifiedAtStr()) // parse sponsor (User.kt) timestamp
+        anObject.sponsor?.emailVerifiedAt = parseStringToTimestamp(emailVerifiedAtStr()) // parse sponsor (User.kt) timestamp
 //        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
 //        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
-        anObject.order.timestamp = parseStringToTimestamp(timestampStr()) // parse order timestamp
+        anObject.order?.timestamp = parseStringToTimestamp(timestampStr()) // parse order timestamp
         return anObject // return anObject (Invoice)
     }
 
