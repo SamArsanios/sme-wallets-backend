@@ -46,7 +46,7 @@ class InvoiceController : CRUDAbstract<Invoice>() {
 
     private fun parseTimestampPluggedIn(anObject: Invoice) : Invoice {
         anObject.theTimestamp = parseStringToTimestamp(timestampStr()) // parse theTimestamp
-        anObject.invoiceDueDate = parseStringToTimestamp(invoiceDueDateStr()) // parse the Invoice Due Date
+        anObject.invoiceDueDate = parseStringToTimestamp(anObject.invoiceDueDateStr) // parse the Invoice Due Date
         anObject.sponsor.emailVerifiedAt = parseStringToTimestamp(emailVerifiedAtStr()) // parse sponsor (User.kt) timestamp
 //        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
 //        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
