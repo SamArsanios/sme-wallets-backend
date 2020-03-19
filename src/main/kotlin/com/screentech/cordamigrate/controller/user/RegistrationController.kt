@@ -2,10 +2,7 @@ package com.screentech.cordamigrate.controller.user
 
 import com.screentech.cordamigrate.dao.user.RegistrationRepository
 import com.screentech.cordamigrate.entity.user.Registration
-import com.screentech.cordamigrate.utility.CRUDAbstract
-import com.screentech.cordamigrate.utility.JSONUtilsKT
-import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
-import com.screentech.cordamigrate.utility.parseStringToTimestamp
+import com.screentech.cordamigrate.utility.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.simp.SimpMessagingTemplate
@@ -38,8 +35,8 @@ class RegistrationController : CRUDAbstract<Registration>(){
     @PutMapping("/update")
     override fun update(@RequestBody anObject: Registration): ResponseEntity<*> {
 
-        anObject.user.emailVerifiedAt = parseStringToTimestamp(anObject.user.emailVerifiedAtStr)
-        anObject.timestamp = parseStringToTimestamp(anObject.timestampStr)
+        anObject.user.emailVerifiedAt = parseStringToTimestamp(emailVerifiedAtStr())
+        anObject.timestamp = parseStringToTimestamp(timestampStr())
 
         val result = JSONUtilsKT.ok(this.registrationRepository.save(anObject))
 
@@ -56,7 +53,6 @@ class RegistrationController : CRUDAbstract<Registration>(){
         this.notificationMessage.convertAndSend("/topic/registrations/findAll", result)
 
         return result
-
     }
 
     @GetMapping("findRegistrationByEmail/{email}")
