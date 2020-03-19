@@ -63,7 +63,7 @@ class InvoiceController : CRUDAbstract<Invoice>() {
     @PostMapping("/create")
     override fun create(@RequestBody anObject: Invoice): ResponseEntity<*> {
 
-        val result = JSONUtilsKT.ok(this.invoiceRepository.save(this.parseTimestampPluggedIn(anObject)))
+        val result = JSONUtilsKT.ok(this.invoiceRepository.save(this.parseTimestamps(anObject)))
 
         this.notificationMessage.convertAndSend("/topic/invoices/create", result)
 
