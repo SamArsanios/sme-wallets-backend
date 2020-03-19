@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.simp.SimpMessagingTemplate
 import org.springframework.web.bind.annotation.*
-import java.math.BigDecimal
 
 @RestController
 @RequestMapping("/api/smewallets/invoices")
@@ -121,7 +120,11 @@ class InvoiceController : CRUDAbstract<Invoice>() {
 //        this.notificationMessage.convertAndSend("/topic/invoices/delete", result)
 
         return result
+    }
 
+    @GetMapping("/findAll")
+    override fun findAll(): ResponseEntity<*> {
+        return JSONUtilsKT.ok(invoiceRepository.findAll())
     }
 
 }
