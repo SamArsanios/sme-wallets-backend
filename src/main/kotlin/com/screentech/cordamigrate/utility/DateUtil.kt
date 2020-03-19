@@ -32,7 +32,7 @@ fun timestampStr() : String = "2020-03-03 10:01:49"
 
 fun emailVerifiedAtStr() : String = timestampStr()
 
-
+fun invoiceDueDateStr() : String = timestampStr()
 //fun main() {
 //
 //
