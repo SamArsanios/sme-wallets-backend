@@ -11,7 +11,7 @@ import javax.persistence.*
 class Session(
 
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column( name  = "id") var id : Long,
-        @OneToOne(cascade = arrayOf(CascadeType.PERSIST)) @JoinColumn(name = "user_id") var user : User,
+        @OneToOne @JoinColumn(name = "user_id") var user : User,
         @Column(name = "ip_address", columnDefinition = "varchar(128)") var ipAddress : String,
         @Column(name = "user_agent", columnDefinition = "varchar(255)") var userAgent : String,
         @Column(name = "payload",columnDefinition = "text") var payload : String,

@@ -12,7 +12,6 @@ class SecurityQuestion(
         @Column(name = "the_timestamp", columnDefinition = "timestamp default now()") var timestamp: Timestamp?,
         @Transient var timestampStr : String?
 ) {
-
     override fun toString(): String {
         return "SecurityQuestion(id=$id, question=$question, timestamp=$timestamp, timestampStr=$timestampStr)"
     }

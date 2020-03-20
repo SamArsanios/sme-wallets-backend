@@ -22,7 +22,7 @@ class Registration(
         @Column(name = "state", columnDefinition = "text") var state : String?,
         @Column(name = "country", columnDefinition = "text") var country : String?,
         @Column(name = "zip", columnDefinition = "varchar(255)") var zip : String?,
-        @Column(name = "crb_number", columnDefinition = "text") var crbNumber: Number?,
+        @Column(name = "crb_number", columnDefinition = "text") var crbNumber: BigDecimal?,
         @Column(name = "cor_contact", columnDefinition = "text")   var corContact : String?,
         @Column(name  = "cor_city", columnDefinition = "text") var corCity : String?,
         @Column(name = "cor_state", columnDefinition = "text") var corState : String?,
