@@ -1,0 +1,18 @@
+GET http://localhost:8081/api/smewallets/roles/findAll
+###
+
+GET http://corda.herokuapp.com/api/smewallets/roles/findAll
+###
+
+POST http://localhost:8081/api/smewallets/roles/update
+###
+
+POST http://localhost:8081/api/smewallets/roles/create
+Content-Type: application/json
+
+{
+  "name": "sami",
+  "guardName": "kib"
+}
+
+###

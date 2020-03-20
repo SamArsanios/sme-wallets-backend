@@ -1,0 +1,86 @@
+GET http://localhost:8081/api/smewallets/supplierOrders/findAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:8081/api/smewallets/supplierOrders/create
+Content-Type: application/json
+
+{
+  "order":
+         {
+           "id": "1",
+           "isbnNumber": "isbn-45",
+           "itemName": "test item name",
+           "itemDescription":"the item description",
+           "billingAddress": " the billing address",
+           "saleUnit": "sale unit",
+           "quantity": 2,
+           "department": "tye department ",
+           "conveyanceMethod" : "the conveyance method",
+           "deliveryTerms": "the delivery terms",
+           "paymentTerms":"the payment terms",
+           "placeOfDelivery":"place of delivery",
+           "deliveryTime":"2020-01-29 13:37:05",
+           "orderDueDate": "2020-01-29 13:37:05",
+           "time_period": "30 days",
+           "qrCode":"the qr code",
+           "orderStatus" : "the order status",
+           "raiseInvoice" : "raise invoice",
+           "notificationStatus" : "the notification status",
+           "timestampStr": "2020-03-18 10:37:23.161940",
+           "industryType": "Manufacturing",
+
+         "buyer":
+                {
+                 "id":1,
+                  "name":"Okia Jacob",
+                  "email":"jacob@gmail.com",
+                  "refUserId":100,
+                  "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+                  "password":"passs",
+                  "phoneNumber":"07005677789",
+                  "userType":"buyer"
+                },
+
+         "wallet": {
+                    "id":1,
+                    "name":"SME",
+                    "timestampStr":"2020-03-03 10:30:45.603888",
+                    "user":
+                          {
+                           "id":1,
+                           "name":"Okia Jacob",
+                           "email":"jacob@gmail.com",
+                           "refUserId":100,
+                           "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+                           "password":"passs",
+                           "phoneNumber":"07005677789",
+                           "userType":"buyer"
+                          }
+                  },
+
+         "supplier": {
+                    "id":2,
+                    "name":"Deb",
+                    "email":"deb@gmail.com",
+                    "refUserId":105,
+                    "emailVerifiedAtStr":"2020-02-26 08:27:31.116151",
+                    "password":"passs",
+                    "phoneNumber":"0700",
+                    "userType":"supplier"
+                    }
+         },
+
+  "pricePerItem": 1,
+  "totalPrice":1 ,
+  "taxRate":1 ,
+  "shippingCharges":2 ,
+  "subTotal":1 ,
+  "finalTotal":3.01 ,
+  "status": "approved"
+}
+
+###
+
+

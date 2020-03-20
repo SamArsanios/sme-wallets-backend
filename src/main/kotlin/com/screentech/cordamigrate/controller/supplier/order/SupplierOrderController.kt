@@ -24,10 +24,14 @@ class SupplierOrderController : CRUDAbstract<SupplierOrder>(){
 
     fun getTheObject(anObject: SupplierOrder): SupplierOrder {
 
-        // anObject.order.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.order.buyer?.emailVerifiedAtStr)
-        // anObject.order.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.order.supplier?.emailVerifiedAtStr)
-        // anObject.order.wallet?.timestamp = parseStringToTimestamp(anObject.order.wallet?.timestampStr)
-        // anObject.order.wallet?.user?.emailVerifiedAt = parseStringToTimestamp(anObject.order.wallet?.user?.emailVerifiedAtStr)
+
+        anObject.order.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.order.buyer?.emailVerifiedAtStr)
+        anObject.order.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.order.supplier?.emailVerifiedAtStr)
+
+//        anObject.order.buyer?.emailVerifiedAt = parseStringToTimestamp(anObject.order.buyer?.emailVerifiedAtStr)
+//         anObject.order.supplier?.emailVerifiedAt = parseStringToTimestamp(anObject.order.supplier?.emailVerifiedAtStr)
+         anObject.order.wallet?.timestamp = parseStringToTimestamp(anObject.order.wallet?.timestampStr)
+         anObject.order.wallet?.user?.emailVerifiedAt = parseStringToTimestamp(anObject.order.wallet?.user?.emailVerifiedAtStr)
 
         return anObject
 
@@ -41,9 +45,13 @@ class SupplierOrderController : CRUDAbstract<SupplierOrder>(){
 
         val result =  JSONUtilsKT.ok(this.supplierOrderRepository.save(theObject))
 
+        println("the result: " + theObject.toString() )
+
         this.notificationMessage.convertAndSend("/topic/supplierOrders/create", result)
 
-        return result
+
+
+        return JSONUtilsKT.ok(theObject)
 
     }
 

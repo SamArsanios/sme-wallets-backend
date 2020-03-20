@@ -1,0 +1,29 @@
+GET http://localhost:8081/api/smewallets/sessions/findAll
+Content-Type: application/json
+###
+
+GET http://localhost:8081/api/smewallets/sessions/findById/1
+Content-Type: application/json
+###
+
+POST http://localhost:8081/api/smewallets/sessions/create
+Content-Type: application/json
+
+{
+  "user": {
+    "id": 1,
+    "name": "Okia Jacob",
+    "email": "jacob@gmail.com",
+    "refUserId": 100,
+    "emailVerifiedAtStr": "2020-03-03 10:01:49.192690",
+    "password": "passs",
+    "phoneNumber": "07005677789",
+    "userType": "buyer"
+  },
+  "ipAddress": "125.56.43.23",
+  "userAgent": "Agent 47",
+  "payload": "the payload",
+  "lastActivity": 2
+}
+
+###

@@ -7,18 +7,15 @@
  *
  */
 
-package com.screentech.cordamigrate.controller
+package com.screentech.cordamigrate.controller.invoices
 
 import com.screentech.cordamigrate.dao.invoices.InvoiceRepository
 import com.screentech.cordamigrate.entity.invoices.Invoice
-import com.screentech.cordamigrate.utility.CRUDAbstract
-import com.screentech.cordamigrate.utility.JSONUtilsKT
-import com.screentech.cordamigrate.utility.parseStringToTimestamp
+import com.screentech.cordamigrate.utility.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.simp.SimpMessagingTemplate
 import org.springframework.web.bind.annotation.*
-import java.math.BigDecimal
 
 @RestController
 @RequestMapping("/api/smewallets/invoices")
@@ -38,10 +35,22 @@ class InvoiceController : CRUDAbstract<Invoice>() {
      */
     private fun parseTimestamps(anObject: Invoice) : Invoice {
         anObject.theTimestamp = parseStringToTimestamp(anObject.theTimestampStr) // parse theTimestamp
-        anObject.sponsor.emailVerifiedAt = parseStringToTimestamp(anObject.sponsor.emailVerifiedAtStr) // parse sponsor (User.kt) timestamp
-        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
-        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
-        anObject.order.timestamp = parseStringToTimestamp(anObject.order.timestampStr) // parse order timestamp
+        anObject.invoiceDueDate = parseStringToTimestamp(anObject.invoiceDueDateStr) // parse the Invoice Due Date
+        anObject.sponsor?.emailVerifiedAt = parseStringToTimestamp(anObject.sponsor?.emailVerifiedAtStr) // parse sponsor (User.kt) timestamp
+//        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
+//        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
+        anObject.order?.timestamp = parseStringToTimestamp(anObject.order?.timestampStr) // parse order timestamp
+        return anObject // return anObject (Invoice)
+    }
+
+
+    private fun parseTimestampPluggedIn(anObject: Invoice) : Invoice {
+        anObject.theTimestamp = parseStringToTimestamp(timestampStr()) // parse theTimestamp
+        anObject.invoiceDueDate = parseStringToTimestamp(anObject.invoiceDueDateStr) // parse the Invoice Due Date
+        anObject.sponsor.emailVerifiedAt = parseStringToTimestamp(emailVerifiedAtStr()) // parse sponsor (User.kt) timestamp
+//        anObject.wallet.timestamp = parseStringToTimestamp(anObject.wallet.timestampStr) // parse wallet (Wallet.kt) timestamp
+//        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(anObject.wallet.user?.emailVerifiedAtStr) // parse user timestamp in Wallet.kt
+        anObject.order.timestamp = parseStringToTimestamp(timestampStr()) // parse order timestamp
         return anObject // return anObject (Invoice)
     }
 
@@ -111,7 +120,11 @@ class InvoiceController : CRUDAbstract<Invoice>() {
 //        this.notificationMessage.convertAndSend("/topic/invoices/delete", result)
 
         return result
+    }
 
+    @GetMapping("/findAll")
+    override fun findAll(): ResponseEntity<*> {
+        return JSONUtilsKT.ok(invoiceRepository.findAll())
     }
 
 }

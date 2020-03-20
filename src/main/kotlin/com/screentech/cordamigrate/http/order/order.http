@@ -6,11 +6,21 @@ GET http://corda.herokuapp.com/api/smewallets/wallets/findAll
 
 ###
 
-POST http://corrda.herokuapp.com/api/smewallets/orders/create
+POST http://localhost:8081/api/smewallets/orders/create
 Content-Type: application/json
 
+
 {
-   "id" : 0,
+  "buyer":{
+    "id":1,
+    "name":"Okia Jacob",
+    "email":"jacob@gmail.com",
+    "refUserId":100,
+    "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+    "password":"passs",
+    "phoneNumber":"07005677789",
+    "userType":"buyer"
+  },
   "isbnNumber": "isbn-45",
   "itemName": "test item name",
   "itemDescription":"the item description",
@@ -22,17 +32,47 @@ Content-Type: application/json
   "deliveryTerms": "the delivery terms",
   "paymentTerms":"the payment terms",
   "placeOfDelivery":"place of delivery",
-
+  "deliveryTime":"2020-01-29 13:37:05",
+  "orderDueDate": "2020-01-29 13:37:05",
+  "time_period": "30 days",
   "qrCode":"the qr code",
+  "wallet": {
+    "id":1,
+    "name":"SME",
+    "timestampStr":"2020-03-03 10:30:45.603888",
+    "user":
+    {
+      "id":1,
+      "name":"Okia Jacob",
+      "email":"jacob@gmail.com",
+      "refUserId":100,
+      "emailVerifiedAtStr":"2020-03-03 10:01:49.192690",
+      "password":"passs",
+      "phoneNumber":"07005677789",
+      "userType":"buyer"
+    }
+},
 
+  "supplier":
+  {
+    "id":2,
+    "name":"Deb",
+    "email":"deb@gmail.com",
+    "refUserId":105,
+    "emailVerifiedAtStr":"2020-02-26 08:27:31.116151",
+    "password":"passs",
+    "phoneNumber":"0700",
+    "userType":"supplier"
+  },
 
   "orderStatus" : "the order status",
   "raiseInvoice" : "raise invoice",
   "notificationStatus" : "the notification status",
-  "buyer": {"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
-  "supplier": {"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
-  "wallet": {"id":1,"name":"Manufacturing","timestampStr":"2020-01-30 8:59:14","user":{"id":4,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"}}
-
+  "timestamp": null,
+  "industryType": "Manufacturing"
 }
 
 ###
+//  "buyer": {"id":1,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
+//  "supplier": {"id":2,"email":"irene@sdfdf.com","emailVerifiedAtStr":"2020-01-29 12:37:01","password":"cona","phoneNumber":"+256344353435","refUserId":123.00,"name":"irene Mutesi","userType":"supplier"},
+//  "wallet": {"id":1,"name":"SME","timestamp": null,"timestampStr":"2020-02-26 8:29:41","user":{"id":2,"email":"deb@gmail.com","emailVerifiedAt":  null, "emailVerifiedAtStr":"2020-0-26 8:27:31","password":"passs","phoneNumber":"0700","refUserId":105,"name":"Deb","userType":"supplier"}}

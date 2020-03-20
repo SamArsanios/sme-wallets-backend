@@ -11,10 +11,8 @@ import javax.persistence.*
 @Table(name = "registrations")
 class Registration(
 
-        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column( name  = "id") var id : Long,
-        @ManyToOne(cascade = arrayOf(CascadeType.MERGE))
-        @JoinColumn(name = "user_id") var user : User,
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column( name  = "id") var id : Long,
+        @ManyToOne(cascade = arrayOf(CascadeType.MERGE)) @JoinColumn(name = "user_id") var user : User,
         @Column( name = "industry_type", columnDefinition = "text") var industryType : String?,
         @Column(name = "name", columnDefinition = "text") var name : String?,
         @Column(name = "email", columnDefinition = "text") var email : String?,
@@ -24,7 +22,8 @@ class Registration(
         @Column(name = "state", columnDefinition = "text") var state : String?,
         @Column(name = "country", columnDefinition = "text") var country : String?,
         @Column(name = "zip", columnDefinition = "varchar(255)") var zip : String?,
-        @Column(name = "cor_address", columnDefinition = "text")   var corAddress : String?,
+        @Column(name = "crb_number", columnDefinition = "text") var crbNumber: Number?,
+        @Column(name = "cor_contact", columnDefinition = "text")   var corContact : String?,
         @Column(name  = "cor_city", columnDefinition = "text") var corCity : String?,
         @Column(name = "cor_state", columnDefinition = "text") var corState : String?,
         @Column(name = "cor_country", columnDefinition = "text") var corCountry  :String?,

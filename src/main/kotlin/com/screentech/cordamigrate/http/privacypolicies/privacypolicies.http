@@ -1,0 +1,35 @@
+GET http://localhost:8081/api/smewallets/privacypolicies/findAll
+Content-Type: application/json
+###
+
+GET https:// 81.199.16.73/api/smewallets/privacypolicies/findAll
+Content-Type: application/json
+###
+
+
+GET http://localhost:8081/api/smewallets/privacypolicies/findById/1
+Content-Type: application/json
+###
+
+
+POST http://localhost:8081/api/smewallets/privacypolicies/create
+Content-Type: application/json
+
+{
+  "user": {
+    "id":1,
+    "email":"comboni@gmail.com",
+    "emailVerifiedAtStr":"2020-03-04 18:00:38.563492",
+    "password":"yellow",
+    "phoneNumber":"07005677789",
+    "refUserId": 100,
+    "name":"Comboni Daniel",
+    "userType":"buyer"
+  },
+  "privacyPolicy": "cool policy",
+  "termsConditions": "terms",
+  "noticeOfAssignment": "Assignment",
+  "paymentAuthorization": "Authorized"
+}
+
+###
