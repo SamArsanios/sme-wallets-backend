@@ -1,13 +1,22 @@
-GET http://localhost:8081/api/smewallets/userAnswers
+GET http://localhost:8081/api/smewallets/useranswers/findAll
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8081/api/smewallets/userAnswers
+POST http://localhost:8081/api/smewallets/useranswers/create
 Content-Type: application/json
 
 {
-"userId" : 17,
+  "users": {
+    "id": 1,
+    "email": "comboni@gmail.com",
+    "emailVerifiedAtStr": "2020-03-04 18:00:38.563492",
+    "password": "yellow",
+    "phoneNumber": "07005677789",
+    "refUserId": 100,
+    "name": "Comboni Daniel",
+    "userType": "buyer"
+  },
   "questionId": 1,
   "answer": 2
 }

@@ -2,16 +2,13 @@ package com.screentech.cordamigrate.controller.walletusers
 
 import com.screentech.cordamigrate.dao.walletusers.WalletUsersRepository
 import com.screentech.cordamigrate.entity.walletusers.WalletUsers
-import com.screentech.cordamigrate.utility.CRUDAbstract
-import com.screentech.cordamigrate.utility.JSONUtilsKT
-import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
-import com.screentech.cordamigrate.utility.parseStringToTimestamp
+import com.screentech.cordamigrate.utility.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("api/smewallets/walletusers")
+@RequestMapping("/api/smewallets/walletusers")
 class WalletUsersController: CRUDAbstract<WalletUsers>() {
     @Autowired
     lateinit var walletUsersRepository: WalletUsersRepository
@@ -19,6 +16,10 @@ class WalletUsersController: CRUDAbstract<WalletUsers>() {
     @PostMapping("/create")
     override fun create(anObject: WalletUsers): ResponseEntity<*> {
         anObject.timestamp = getCurrentTimestampSQL()
+        anObject.wallet.timestamp = parseStringToTimestamp(timestampStr())
+        anObject.wallet.user?.emailVerifiedAt = parseStringToTimestamp(timestampStr())
+        anObject.buyer.emailVerifiedAt = parseStringToTimestamp(timestampStr())
+
         val result = JSONUtilsKT.ok(walletUsersRepository.save(anObject))
         return result
     }

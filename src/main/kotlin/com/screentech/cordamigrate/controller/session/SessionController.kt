@@ -17,7 +17,7 @@ class SessionController :  CRUDAbstract<Session>() {
     @Autowired
     lateinit var sessionRepository: SessionRepository
 
-    @GetMapping("/create")
+    @PostMapping("/create")
     override fun create(@RequestBody anObject: Session): ResponseEntity<*> {
         anObject.timestamp = getCurrentTimestampSQL()
         return JSONUtilsKT.ok(this.sessionRepository.save(anObject))

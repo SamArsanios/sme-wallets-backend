@@ -2,10 +2,7 @@ package com.screentech.cordamigrate.controller.invites
 
 import com.screentech.cordamigrate.dao.invites.InvitesRepository
 import com.screentech.cordamigrate.entity.invites.Invite
-import com.screentech.cordamigrate.utility.CRUDAbstract
-import com.screentech.cordamigrate.utility.JSONUtilsKT
-import com.screentech.cordamigrate.utility.getCurrentTimestampSQL
-import com.screentech.cordamigrate.utility.parseStringToTimestamp
+import com.screentech.cordamigrate.utility.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.messaging.simp.SimpMessagingTemplate
@@ -26,7 +23,7 @@ class InvitesController : CRUDAbstract<Invite>(){
     override fun create(@RequestBody anObject: Invite): ResponseEntity<*> {
 
         anObject.timestamp = getCurrentTimestampSQL()
-        anObject.user.emailVerifiedAt = parseStringToTimestamp(anObject.timestampStr)
+        anObject.user.emailVerifiedAt = parseStringToTimestamp(timestampStr())
 
         val result = JSONUtilsKT.ok(this.invitesRepository.save(anObject))
 

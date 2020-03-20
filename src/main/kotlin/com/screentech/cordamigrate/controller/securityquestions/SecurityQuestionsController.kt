@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("api/smewallets/securityquestions")
+@RequestMapping("/api/smewallets/securityquestions")
 class SecurityQuestionsController: CRUDAbstract<SecurityQuestion>() {
 
     @Autowired

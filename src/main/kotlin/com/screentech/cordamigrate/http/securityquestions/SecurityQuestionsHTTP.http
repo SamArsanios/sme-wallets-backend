@@ -1,14 +1,13 @@
-GET http://localhost:8081/api/smewallets/securityQuestions
+GET http://localhost:8081/api/smewallets/securityquestions/findAll
 Content-Type: application/json
 
 ###
 
-POST  http://localhost:8081/api/smewallets/securityQuestions
+POST  http://localhost:8081/api/smewallets/securityquestions/create
 Content-Type: application/json
 
 {
-"question": "what is your best friend's birthday?"
-
+"question": "what is your birthday cuz?"
 }
 
 ###

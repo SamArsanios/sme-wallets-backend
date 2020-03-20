@@ -21,8 +21,7 @@ class UserAnswer (
                 )
         var users: List<User> = mutableListOf<User>(),
 
-        @ManyToOne(cascade = arrayOf(CascadeType.PERSIST))
-        @JoinColumn(name = "question_id") var questionId : SecurityQuestion,
+        @ManyToOne(cascade = arrayOf(CascadeType.PERSIST)) @JoinColumn(name = "question_id") var questionId : SecurityQuestion,
         @Column(name = "answer",columnDefinition = "text") var answer : BigDecimal,
         @Column(name = "the_timestamp", columnDefinition = "timestamp default now()") var timestamp : Timestamp? = getCurrentTimestampSQL(),
         @Transient var timestampStr : String?

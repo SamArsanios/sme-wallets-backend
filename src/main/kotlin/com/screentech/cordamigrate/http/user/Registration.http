@@ -9,57 +9,63 @@ POST http://localhost:8081/api/smewallets/registrations/create
 Content-Type: application/json
 
 {
-
-  "user" : {"id":1,"email":"samarsanios@gmail.com","emailVerifiedAtStr":"2020-01-08 7:47:25","password":"passs","phoneNumber":"0755","refUserId":103,"name":"Samson Arsanios Samson"},
-  "industryType" : "agric",
-  "name" : "Jacob",
-  "email" : "jacobokia@test.com",
-  "address" : "flying school",
-  "contactNumber" : "0783",
-  "city" : "Soroti",
-  "state" : "East",
-  "country" : "Uganda",
-  "zip" : "0123",
-  "corAddress" : "the cor address",
-  "corCity" : "the cor city",
-  "corState" : "the cor state",
-  "corCountry" :"the cor country",
-  "corZipCode" : "the cor zip code",
-  "companyName"  :"the company name",
-  "crName" : "the cr name",
-  "companyEmail" : "the company email",
-  "companyAddress" : "the company address"
-
+  "user": {
+    "id": 1,
+    "email": "samarsanios@gmail.com",
+    "emailVerifiedAtStr": "2020-01-08 7:47:25",
+    "password": "passs",
+    "phoneNumber": "0755",
+    "refUserId": 103,
+    "name": "Samson Arsanios Samson",
+    "userType": "buyer"
+  },
+  "industryType": "agric",
+  "name": "Jacob",
+  "email": "jacobokia@test.com",
+  "address": "flying school",
+  "contactNumber": "0783",
+  "city": "Soroti",
+  "state": "East",
+  "country": "Uganda",
+  "zip": "0123",
+  "crbNumber": 45784,
+  "corContact": "the cor address",
+  "corCity": "the cor city",
+  "corState": "the cor state",
+  "corCountry": "the cor country",
+  "corZipCode": "the cor zip code",
+  "companyName": "the company name",
+  "crName": "the cr name",
+  "companyEmail": "the company email",
+  "companyAddress": "the company address"
 }
 
 ###
-
 
 PUT http://localhost:8081/api/smewallets/registrations/update
 Content-Type: application/json
 
 {
   "id": 1,
-  "userId" : 17,
-  "industryType" : "aviation",
-  "name" : "Jacob Okia",
-  "email" : "jacobokia@test.com",
-  "address" : "flying school Soroti",
-  "contactNumber" : "0783 078 897",
-  "city" : "Soroti District",
-  "state" : "East Uganda",
-  "country" : "Uganda The country",
-  "zip" : "0123 456",
-  "corAddress" : "the cor address updated",
-  "corCity" : "the cor city updated",
-  "corState" : "the cor state updated",
-  "corCountry" :"the cor country updated",
-  "corZipCode" : "the cor zip code updated",
-  "companyName"  :"the company name updated",
-  "crName" : "the cr name updated",
-  "companyEmail" : "the company email updated",
-  "companyAddress" : "the company address updated"
-
+  "userId": 17,
+  "industryType": "aviation",
+  "name": "Jacob Okia",
+  "email": "jacobokia@test.com",
+  "address": "flying school Soroti",
+  "contactNumber": "0783 078 897",
+  "city": "Soroti District",
+  "state": "East Uganda",
+  "country": "Uganda The country",
+  "zip": "0123 456",
+  "corAddress": "the cor address updated",
+  "corCity": "the cor city updated",
+  "corState": "the cor state updated",
+  "corCountry": "the cor country updated",
+  "corZipCode": "the cor zip code updated",
+  "companyName": "the company name updated",
+  "crName": "the cr name updated",
+  "companyEmail": "the company email updated",
+  "companyAddress": "the company address updated"
 }
 
 ###
