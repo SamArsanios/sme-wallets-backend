@@ -20,11 +20,11 @@ POST http://localhost:8081/api/smewallets/users/create
 Content-Type: application/json
 
 {
-  "email" : "samson@gmail.com",
-  "password" : "dadsf",
-  "phoneNumber" : "0781145478",
+  "email" : "deborah@gmail.com",
+  "password" : "deborah",
+  "phoneNumber" : "0712457898",
   "refUserId" : 102,
-  "name": "Little Wolf",
+  "name": "Deborah Kalungi",
   "userType": "sponsor"
 }
 
